@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .wrapper#developers
+        h1= data.title
+        a.menu__link(href='./') Home
+        a.menu__link(id='downD') Download
+        ul.main__list
+            if (data.devs)
+                for dev in data.devs
+                    li.main__item
+                        .dev__name Developer Name:  #{dev.name}
+                        .dev__rate Developer Rate (p/h $): #{dev.rate}
+                        .dev__date Registration Date: #{dev.date}
+
+
+
+
+
+
+
+

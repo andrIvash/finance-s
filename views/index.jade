@@ -1,0 +1,49 @@
+extends layout
+
+block content
+    .wrapper#finance
+        h1= title
+        p Welcome to account list
+        a.menu__link(id='dlink' href='./dev') Developer List
+        a.menu__link(id='plink' href='./proj') Projects List
+        .main.clearfix
+            .main__dev
+                .main__title Developers
+                form.main__form.dev-form(id="formDev" data-form="DevList")
+                    .dev-form__block
+                        label.main__label Add Name
+                        input.main__input(type="text" name="name" placeholder="input name")
+                    .dev-form__block
+                        label.main__label Add rate per hour ($)
+                        input.main__input.rate(type="text" name="rate" placeholder="add rate")
+                    .dev-form__block
+                        button.main__btn(type="submit") Add
+                        button.main__btn#delDevList(type="reset") Clear All
+                hr
+                ul.main__list.devList
+            .main__project
+                .main__title Project
+                form.main__form.project-form(id="formProj" data-form="ProjList")
+                    .project-form__block
+                        label.main__label Add Project
+                        input.main__input.project-form__input(type="text" name="name" placeholder="input name")
+                    .project-form__block
+                        label.main__label Add price per dev / per hour ($)
+                        input.main__input.rate(type="text" name="rate" placeholder="add rate")
+                    .project-form__block
+                        button.main__btn#addProj(type="submit") Add
+                        button.main__btn#delProjList(type="reset") Clear All
+                hr
+                ul.main__list.projList
+    .modal(id='modal')
+        .modal__inner
+            form.modal__form(id='mform')
+                .modal__block
+                    label.modal__label Add Devs Name
+                    input.modal__input(type="text" name="name" placeholder="input name")
+                .modal__block
+                    button.modal__btn(type="submit") Add
+                    button.modal__btn(type="reset") Reset
+                .modal__error
+                .close(id='cModal') &nbsp; X
+

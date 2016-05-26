@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .wrapper#projects
+        h1= data.title
+        a.menu__link(href='./') Home
+        a.menu__link(id='downP') Download
+
+        ul.main__list
+            if (data.projects)
+                for proj in data.projects
+                    li.main__item
+                        .main__name Project Name:  #{proj.name}
+                        .main__rate Project Rate (p/h $): #{proj.rate}
+                        .main__date Registration Date: #{proj.date}
+                        hr
+                        .dev__title Developers list:
+                        ul.dev__list
+                            for dev in proj.devs
+                                li.dev__item
+                                    .dev__name Developer Name:  #{dev.name}
+                                    .dev__rate Developer Rate (p/h $): #{dev.rate}
+                                    .dev__date Registration Date: #{dev.date}
+
+
+
